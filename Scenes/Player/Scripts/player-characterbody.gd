@@ -42,3 +42,7 @@ func _physics_process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
+		
+func die () -> void:
+	print ("player died")
+	get_tree().call_deferred('reload_current_scene')
